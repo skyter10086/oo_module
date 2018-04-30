@@ -1,0 +1,9 @@
+CREATE TABLE [% table %] (
+[%  FOREACH field IN fields -%]
+    [% IF loop.last %]
+        [% field.name %] [% field.type %][% field.precision %] [% field.primary %]
+    [% ELSE %]
+        [% field.name %] [% field.type %][% field.precision %] [% field.primary %],
+    [% END %]
+[% END -%]
+)
